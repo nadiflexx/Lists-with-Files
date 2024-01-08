@@ -76,7 +76,7 @@ public class StuBurger {
 			System.out.println("Escribe el nombre del plato:");
 			String nombre = sc.next();
 
-			if (platos.size() == 0) { //Si la array esta vacía directamente añadimos un plato
+			if (platos.isEmpty()) { //Si la array esta vacía directamente añadimos un plato
 				pedirDatosPlato(nombre);
 			} else { //En caso de no estarlo comprobamos si existe un nombre igual al que acabamos de introducir
 
@@ -95,7 +95,7 @@ public class StuBurger {
 	}
 
     private static void darAltaValoracion() {
-		if (platos.size() != 0) {
+		if (!platos.isEmpty()) {
 			boolean salida = false;
 
 			while(!salida) {
@@ -126,15 +126,15 @@ public class StuBurger {
     }
 
 	private static void consultarListadoPlatos() {
-		if (platos.size() != 0) listadoPlatos(platos, valoraciones);
+		if (!platos.isEmpty()) listadoPlatos(platos, valoraciones);
 		else System.err.println("No hay platos todavía. Crea un plato.");
 	}
 
     private static void bajaPlato() throws IOException {
-    	if (platos.size() != 0) {
+    	if (!platos.isEmpty()) {
 			Plato platoElegido = eligirPlato(platos);
 
-			if (valoraciones.size() != 0) {
+			if (!valoraciones.isEmpty()) {
 				valoraciones.get(0).borrarValoraciones(platoElegido, valoraciones);
 				Fichero.escribirValoraciones(valoraciones);
 			}
@@ -147,7 +147,7 @@ public class StuBurger {
 	}
 
 	private static void modificarPlato() throws IOException {
-		if (platos.size() != 0) {
+		if (!platos.isEmpty()) {
 			Plato platoElegido = eligirPlato(platos);
 			platoElegido.actualizarPrecioPlato(platoElegido);
 			Fichero.escribirPlatos(platos);
@@ -157,12 +157,12 @@ public class StuBurger {
 	}
 
 	private static void mostrarTodosPlatos() {
-		if (platos.size() != 0) mostrarPlatosYValoraciones(platos, valoraciones);
+		if (!platos.isEmpty()) mostrarPlatosYValoraciones(platos, valoraciones);
 		else System.err.println("No hay platos todavía. Crea un plato.");
 	}
 
 	private static void mostrarPlatosSegunTipo() {
-		if (platos.size() != 0) platos.get(0).mostrarTipoDePlatos(platos);
+		if (!platos.isEmpty()) platos.get(0).mostrarTipoDePlatos(platos);
 		else System.err.println("No hay platos todavía. Crea un plato.");
 	}
 

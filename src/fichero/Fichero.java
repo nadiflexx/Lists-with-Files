@@ -42,7 +42,7 @@ public class Fichero {
         file = new File(rutaAbsoluta + slashRoute + platos);
 
         vaciarContenido(file);
-        String finDeLinea = System.getProperty("line.separator");
+        String finDeLinea = System.lineSeparator();
 
         for (Plato Plato: plato ) {
             Pw.write("Plato: " + Plato.toString() + finDeLinea);
@@ -59,7 +59,7 @@ public class Fichero {
         file = new File(rutaAbsoluta + slashRoute + valoraciones);
 
         vaciarContenido(file);
-        String finDeLinea = System.getProperty("line.separator");
+        String finDeLinea = System.lineSeparator();
 
         for (Valoracion valoracion: valoracions ) {
             Pw.write("Valoracion: " +valoracion.toString() + finDeLinea);
