@@ -1,0 +1,1 @@
+Plato: nombre=Helado; tipo=Postre; precio=3.0
